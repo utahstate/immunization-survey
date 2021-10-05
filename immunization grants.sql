@@ -5,6 +5,8 @@ GRANT READ ON GTVIMMU TO ban_default_pagebuilder_m;
 
 GRANT SELECT, INSERT, UPDATE ON GORIMMU TO ban_default_pagebuilder_m;
 
+GRANT READ ON baninst1.zsrimst TO ban_default_pagebuilder_m;
+
 --Add Action Item Processing Template to index
 INSERT INTO GCBPBTR (GCBPBTR_PAGE_ID,
                      GCBPBTR_TEMPLATE_NAME,

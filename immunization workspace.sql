@@ -29,8 +29,9 @@ SELECT gtvimmu_code           "immu_code",
 
 SELECT gtvimst_code           "imst_code",
        gtvimst_desc           "imst_desc",
+       zsrimst_long_desc      "imst_long_desc",
        gtvimst_surrogate_id   "id"
-  FROM gtvimst
+  FROM gtvimst LEFT JOIN baninst1.zsrimst ON gtvimst_code = zsrimst_imst_code
  WHERE gtvimst_code = NVL ( :imst_code, gtvimst_code);
 
 --AIPImmunizationRecord
@@ -48,7 +49,7 @@ SELECT gorimmu_pidm            "pidm",
   FROM gorimmu
        JOIN gtvimmu ON gtvimmu_code = gorimmu_immu_code
        JOIN gtvimst ON gtvimst_code = gorimmu_imst_code
- WHERE     gorimmu_pidm = NVL ( :pidm, gorimmu_pidm)
+ WHERE     gorimmu_pidm = NVL ( :parm_user_pidm, gorimmu_pidm)
        AND gorimmu_immu_code = NVL ( :immu_code, gorimmu_immu_code);
 
 --comment is 4000 characters
@@ -61,7 +62,7 @@ BEGIN
   SELECT NVL (MAX (gorimmu_seq_no), 0) + 1   new_seq_no
     INTO lv_seq_no
     FROM gorimmu
-   WHERE gorimmu_pidm = :pidm AND gorimmu_immu_code = :immu_code;
+   WHERE gorimmu_pidm = :parm_user_pidm AND gorimmu_immu_code = :immu_code;
 
   INSERT INTO gorimmu (gorimmu_pidm,
                        gorimmu_code,
@@ -72,10 +73,10 @@ BEGIN
                        gorimmu_imst_code,
                        gorimmu_comment,
                        gorimmu_data_origin)
-       VALUES ( :pidm,
+       VALUES ( :parm_user_pidm,
                NVL ( :immu_code, 'COVID-19'),
                lv_seq_no,
-               :user_id,
+               lv_user,
                NVL ( :activity_date, SYSDATE),
                NVL ( :immunization_date, NULL),
                :imst_code,
