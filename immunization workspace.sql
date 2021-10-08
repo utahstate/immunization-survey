@@ -1,4 +1,4 @@
-/* Formatted on 9/28/2021 4:17:58 PM (QP5 v5.371) */
+/* Formatted on 10/8/2021 4:15:10 PM (QP5 v5.371) */
 /*
 GOAIMMU - Immunization Information (GOAIMMU) page
 GTVIMMU - Immunization Code Validation (GTVIMMU) page
@@ -19,11 +19,12 @@ DESC GORIMMU;
 
 --AIPImmunizationCode
 
-SELECT gtvimmu_code           "immu_code",
-       gtvimmu_desc           "immu_desc",
-       gtvimmu_surrogate_id   "id"
-  FROM gtvimmu
- WHERE gtvimmu_code = NVL ( :immu_code, gtvimmu_code);
+SELECT gtvimst_code           "imst_code",
+       gtvimst_desc           "imst_desc",
+       zsrimst_long_desc      "imst_long_desc",
+       gtvimst_surrogate_id   "id"
+  FROM gtvimst LEFT JOIN baninst1.zsrimst ON gtvimst_code = zsrimst_imst_code
+ WHERE gtvimst_code = NVL ( :imst_code, gtvimst_code);
 
  --AIPImmunizationStatus
 
