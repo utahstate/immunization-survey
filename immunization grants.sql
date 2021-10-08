@@ -1,4 +1,4 @@
-/* Formatted on 9/28/2021 4:17:53 PM (QP5 v5.371) */
+/* Formatted on 10/8/2021 4:14:44 PM (QP5 v5.371) */
 GRANT READ ON GTVIMST TO ban_default_pagebuilder_m;
 
 GRANT READ ON GTVIMMU TO ban_default_pagebuilder_m;
@@ -8,6 +8,7 @@ GRANT SELECT, INSERT, UPDATE ON GORIMMU TO ban_default_pagebuilder_m;
 GRANT READ ON baninst1.zsrimst TO ban_default_pagebuilder_m;
 
 --Add Action Item Processing Template to index
+
 INSERT INTO GCBPBTR (GCBPBTR_PAGE_ID,
                      GCBPBTR_TEMPLATE_NAME,
                      GCBPBTR_SOURCE_IND,
@@ -31,4 +32,9 @@ INSERT INTO GCBPBTR (GCBPBTR_PAGE_ID,
            (SELECT 1
               FROM GCBPBTR
              WHERE GCBPBTR_PAGE_ID = 'AIPImmunizationSurvey');
-             
+
+GRANT READ ON gtvimst TO IMMU_UTIL;
+
+GRANT READ ON gtvimmu TO IMMU_UTIL;
+
+GRANT SELECT, INSERT, UPDATE ON gorimmu TO IMMU_UTIL;
