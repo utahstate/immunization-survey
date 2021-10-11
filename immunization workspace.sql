@@ -66,7 +66,7 @@ BEGIN
    WHERE gorimmu_pidm = :parm_user_pidm AND gorimmu_immu_code = :immu_code;
 
   INSERT INTO gorimmu (gorimmu_pidm,
-                       gorimmu_code,
+                       gorimmu_immu_code,
                        gorimmu_seq_no,
                        gorimmu_user_id,
                        gorimmu_activity_date,
