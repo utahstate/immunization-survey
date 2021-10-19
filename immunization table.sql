@@ -3,14 +3,12 @@ SET DEF OFF;
 
 SET ESCAPE '\';
 
-/*
 CREATE TABLE baninst1.zsrimst
 (
   zsrimst_id           NUMBER GENERATED ALWAYS AS IDENTITY NOT NULL,
   zsrimst_imst_code    VARCHAR2 (2) NOT NULL,
   zsrimst_long_desc    VARCHAR2 (4000) NOT NULL
 );
-*/
 
 DELETE FROM baninst1.zsrimst;
 
