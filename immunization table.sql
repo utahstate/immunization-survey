@@ -17,15 +17,12 @@ COMMIT;
 INSERT INTO baninst1.zsrimst (zsrimst_imst_code, zsrimst_long_desc)
        VALUES (
          'VC',
-         'I am fully vaccinated, but have not yet uploaded proof of vaccination in Aggie Health. 
-          A person is fully vaccinated two weeks after they received their final dose of a required and/or accepted vaccine (two doses for Comirnaty/Pfizer or Moderna; one for Johnson \& Johnson). I understand a university official will follow up with me regarding my vaccination status.
-          **Information for uploading my proof of vaccination can be found at <a href="https://aggiehealth.usu.edu">aggiehealth.usu.edu</a>');
+         'I am fully vaccinated, but have not yet uploaded proof of vaccination in Aggie Health.<br>A person is fully vaccinated two weeks after they received their final dose of a required and/or accepted vaccine (two doses for Comirnaty/Pfizer or Moderna; one for Johnson \& Johnson). I understand a university official will follow up with me regarding my vaccination status.<br>**Information for uploading my proof of vaccination can be found at <a href="https://aggiehealth.usu.edu">aggiehealth.usu.edu</a>');
 
 INSERT INTO baninst1.zsrimst (zsrimst_imst_code, zsrimst_long_desc)
        VALUES (
          'PL',
-         'I am not fully vaccinated, but I plan to be and will upload my proof of vaccination before spring semester starts on Monday, January 10, 2022. I understand that a university official will follow up with me regarding my vaccination status.  
-          **Information for vaccination clinics can be found at <a href="https://vaccine.usu.edu">vaccine.usu.edu</a>.');
+         'I am not fully vaccinated, but I plan to be and will upload my proof of vaccination before spring semester starts on Monday, January 10, 2022. I understand that a university official will follow up with me regarding my vaccination status.<br>**Information for vaccination clinics can be found at <a href="https://vaccine.usu.edu">vaccine.usu.edu</a>.');
 
 INSERT INTO baninst1.zsrimst (zsrimst_imst_code, zsrimst_long_desc)
        VALUES (
@@ -45,14 +42,12 @@ INSERT INTO baninst1.zsrimst (zsrimst_imst_code, zsrimst_long_desc)
 INSERT INTO baninst1.zsrimst (zsrimst_imst_code, zsrimst_long_desc)
        VALUES (
          'XR',
-         'I am not fully vaccinated. I state that I am eligible for an exemption from USU''s vaccination requirement based on a <strong>religious belief</strong> provided under Utah Law.
-          Please provide a statement of religious beliefs in the comment box below.');
+         'I am not fully vaccinated. I state that I am eligible for an exemption from USU''s vaccination requirement based on a <strong>religious belief</strong> provided under Utah Law.<br>Please provide a statement of religious beliefs in the comment box below.');
 
 INSERT INTO baninst1.zsrimst (zsrimst_imst_code, zsrimst_long_desc)
        VALUES (
          'XP',
-         'I am not fully vaccinated. I state that I am eligible for an exemption from USU''s vaccination requirement based on a <strong>personal belief</strong> provided under Utah Law.
-          Please provide a statement of personal belief in the comment box below.');
+         'I am not fully vaccinated. I state that I am eligible for an exemption from USU''s vaccination requirement based on a <strong>personal belief</strong> provided under Utah Law.<br>Please provide a statement of personal belief in the comment box below.');
 
 COMMIT;
 
