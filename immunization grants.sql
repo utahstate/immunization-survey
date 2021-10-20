@@ -5,7 +5,7 @@ GRANT READ ON GTVIMMU TO ban_default_pagebuilder_m;
 
 GRANT SELECT, INSERT, UPDATE ON GORIMMU TO ban_default_pagebuilder_m;
 
-GRANT READ ON baninst1.zsrimst TO ban_default_pagebuilder_m;
+GRANT READ ON baninst1.zsrimst TO ban_default_pagebuilder_m, usr_ss_default_m;
 
 --Add Action Item Processing Template to index
 
@@ -32,6 +32,8 @@ INSERT INTO GCBPBTR (GCBPBTR_PAGE_ID,
            (SELECT 1
               FROM GCBPBTR
              WHERE GCBPBTR_PAGE_ID = 'AIPImmunizationSurvey');
+
+--Add permissions for API utility account
 
 GRANT READ ON gtvimst TO IMMU_UTIL;
 
